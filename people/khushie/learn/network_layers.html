@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Layers</title>
+    <link rel="stylesheet" href="learn_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="detail-page">
+            <a href="../../../maitry_learn.html" class="back-button">← Back to Learning Topics</a>
+            
+            <h1>Network Layers (OSI Model)</h1>
+
+            <h2>Brief Description</h2>
+            <p>The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes the functions of a communication system into seven distinct layers. Each layer serves a specific purpose and communicates with the layers directly above and below it.</p>
+
+            <div class="time-section">
+                <h2>⚡ 1-Minute Explanation</h2>
+                <p>The OSI model has 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application. Think of it like sending a letter: you write it (Application), put it in an envelope (Presentation), address it (Session), decide the route (Network), ensure delivery (Transport), and finally physically send it (Data Link & Physical).</p>
+            </div>
+
+            <div class="time-section">
+                <h2>📖 5-Minute Explanation</h2>
+                
+                <h3>Layer 7 - Application Layer</h3>
+                <p>The topmost layer that interacts directly with software applications. Protocols: HTTP, FTP, SMTP, DNS.</p>
+
+                <h3>Layer 6 - Presentation Layer</h3>
+                <p>Translates data between the application layer and the network. Handles encryption, compression, and data formatting.</p>
+
+                <h3>Layer 5 - Session Layer</h3>
+                <p>Manages sessions between applications. Establishes, maintains, and terminates connections.</p>
+
+                <h3>Layer 4 - Transport Layer</h3>
+                <p>Provides reliable data transfer. Protocols: TCP (reliable) and UDP (fast but unreliable). Handles segmentation and flow control.</p>
+
+                <h3>Layer 3 - Network Layer</h3>
+                <p>Handles routing and forwarding of packets across networks. Uses IP addresses. Main protocol: IP (Internet Protocol).</p>
+
+                <h3>Layer 2 - Data Link Layer</h3>
+                <p>Provides node-to-node data transfer. Uses MAC addresses. Handles error detection and correction. Divided into LLC and MAC sublayers.</p>
+
+                <h3>Layer 1 - Physical Layer</h3>
+                <p>Transmits raw bits over a physical medium (cables, radio frequencies). Defines hardware specifications.</p>
+            </div>
+
+            <div class="time-section">
+                <h2>📚 10-Minute Deep Dive</h2>
+                
+                <h3>Detailed Layer Functions</h3>
+                
+                <p><strong>Application Layer (7):</strong> This is where network applications and their protocols reside. When you use your web browser, email client, or file transfer application, you're interacting with this layer. It provides services directly to user applications.</p>
+
+                <p><strong>Presentation Layer (6):</strong> Acts as a translator between the application and network. It handles data representation, encryption/decryption (SSL/TLS), and compression. For example, when you access an HTTPS website, this layer handles the encryption.</p>
+
+                <p><strong>Session Layer (5):</strong> Manages dialogs between applications. It establishes, maintains, and synchronizes communication sessions. Handles checkpointing and recovery in case of connection failures.</p>
+
+                <p><strong>Transport Layer (4):</strong> Provides end-to-end communication services. TCP ensures reliable delivery with acknowledgments, retransmissions, and flow control. UDP is connectionless and faster but doesn't guarantee delivery. Port numbers are used here to identify applications.</p>
+
+                <p><strong>Network Layer (3):</strong> Responsible for packet forwarding and routing through intermediate routers. Uses logical addressing (IP addresses). Determines the best path for data to travel from source to destination across multiple networks.</p>
+
+                <p><strong>Data Link Layer (2):</strong> Organizes bits into frames and provides error detection. Uses MAC addresses for local network communication. Switches operate at this layer. The LLC sublayer handles flow control and error checking, while the MAC sublayer controls how devices on the network gain access to the medium.</p>
+
+                <p><strong>Physical Layer (1):</strong> Deals with the physical transmission of data. Defines electrical signals, cable types, connector types, and transmission rates. Includes specifications for hubs, repeaters, and the actual cables or wireless signals used.</p>
+
+                <h3>Data Encapsulation Process</h3>
+                <p>As data moves down the layers, each layer adds its own header (and sometimes trailer) to the data. This process is called encapsulation. At the receiving end, each layer strips off its corresponding header as data moves up the stack.</p>
+            </div>
+
+            <div class="nitty-gritty">
+                <h2>🎯 Important Points to Remember</h2>
+                <ul>
+                    <li><strong>Mnemonic:</strong> "All People Seem To Need Data Processing" (Application, Presentation, Session, Transport, Network, Data Link, Physical)</li>
+                    <li>TCP is connection-oriented and reliable, UDP is connectionless and unreliable but faster</li>
+                    <li>Routers operate at Layer 3 (Network), Switches at Layer 2 (Data Link), Hubs at Layer 1 (Physical)</li>
+                    <li>IP addresses are Layer 3 (logical), MAC addresses are Layer 2 (physical)</li>
+                    <li>The OSI model is theoretical; in practice, TCP/IP model (4 layers) is more commonly used</li>
+                    <li>Encapsulation: Data → Segment → Packet → Frame → Bits</li>
+                    <li>Port numbers range: 0-1023 (well-known), 1024-49151 (registered), 49152-65535 (dynamic/private)</li>
+                    <li>Common protocols and their layers: HTTP/HTTPS (7), SSL/TLS (6), TCP/UDP (4), IP (3), Ethernet (2)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
