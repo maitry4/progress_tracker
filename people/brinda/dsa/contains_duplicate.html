@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contains Duplicate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="dsa_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="detail-page">
+            <a href="../../../maitry_dsa.html" class="back-button">← Back to DSA List</a>
+            
+            <h1>Contains Duplicate</h1>
+            
+            <a href="https://leetcode.com/problems/contains-duplicate/" class="question-link" target="_blank">
+                View on LeetCode →
+            </a>
+
+            <h2>Problem Statement</h2>
+            <p>Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.</p>
+
+            <h2>Approaches</h2>
+
+            <div class="approach">
+                <h3>Approach 1: Brute Force (Not Recommended)</h3>
+                <p><strong>Time Complexity:</strong> O(n²)</p>
+                <p><strong>Space Complexity:</strong> O(1)</p>
+                <p>Check every element against every other element. This is inefficient for large arrays.</p>
+            </div>
+
+            <div class="approach">
+                <h3>Approach 2: Sorting</h3>
+                <p><strong>Time Complexity:</strong> O(n log n)</p>
+                <p><strong>Space Complexity:</strong> O(1)</p>
+                <p>Sort the array and check if adjacent elements are equal.</p>
+                
+                <h4>C++ Implementation:</h4>
+                <pre><code class="language-cpp">class Solution {
+public:
+    bool containsDuplicate(vector&lt;int&gt;& nums) {
+        sort(nums.begin(), nums.end());
+        for (int i = 1; i &lt; nums.size(); i++) {
+            if (nums[i] == nums[i - 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+};</code></pre>
+
+                <h4>Java Implementation:</h4>
+                <pre><code class="language-java">class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 1; i &lt; nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}</code></pre>
+            </div>
+
+            <div class="approach">
+                <h3>Approach 3: Hash Set (Optimal)</h3>
+                <p><strong>Time Complexity:</strong> O(n)</p>
+                <p><strong>Space Complexity:</strong> O(n)</p>
+                <p>Use a hash set to track seen elements. If we encounter an element already in the set, we have a duplicate.</p>
+                
+                <h4>C++ Implementation:</h4>
+                <pre><code class="language-cpp">class Solution {
+public:
+    bool containsDuplicate(vector&lt;int&gt;& nums) {
+        unordered_set&lt;int&gt; seen;
+        for (int num : nums) {
+            if (seen.count(num) > 0) {
+                return true;
+            }
+            seen.insert(num);
+        }
+        return false;
+    }
+};</code></pre>
+
+                <h4>Java Implementation:</h4>
+                <pre><code class="language-java">class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashSet&lt;Integer&gt; seen = new HashSet&lt;&gt;();
+        for (int num : nums) {
+            if (seen.contains(num)) {
+                return true;
+            }
+            seen.add(num);
+        }
+        return false;
+    }
+}</code></pre>
+            </div>
+
+            <h2>Key Insights</h2>
+            <ul>
+                <li>Hash sets provide O(1) average-case lookup time</li>
+                <li>Trading space for time is often worthwhile</li>
+                <li>The optimal solution depends on constraints (memory vs time)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+</body>
+</html>

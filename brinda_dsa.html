@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brinda - DSA Problems</title>
+    <link rel="stylesheet" href="styles/dsa.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>💻 Brinda's DSA Problems</h1>
+        </div>
+        <div class="topics-grid" id="topics"></div>
+    </div>
+
+    <script>
+        fetch("detail.json")
+            .then(response => response.json())
+            .then(data => {
+                const topics = data.people.brinda.dsa || [];
+                const container = document.getElementById("topics");
+
+                topics.forEach(item => {
+                    const card = document.createElement("div");
+                    card.className = "topic-card";
+                    card.innerHTML = `
+                        <h3>${item.title}</h3>
+                        <a href="people/brinda/dsa/${item.file}">View Solution →</a>
+                        ${item.date ? `<div class="meta">Added: ${item.date}</div>` : ""}
+                    `;
+                    container.appendChild(card);
+                });
+            })
+            .catch(err => {
+                console.error("Failed to load detail.json", err);
+            });
+    </script>
+</body>
+</html>

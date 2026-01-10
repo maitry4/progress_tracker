@@ -31,6 +31,22 @@
           "date": "2026-01-10"
         }
       ]
+    },
+    "brinda": {
+      "dsa": [
+        {
+          "title": "Contains Duplicate",
+          "file": "contains_duplicate.html",
+          "date": "2026-01-10"
+        }
+      ],
+      "learn": [
+        {
+          "title": "Network Layers",
+          "file": "network_layers.html",
+          "date": "2026-01-10"
+        }
+      ]
     }
   }
 }
