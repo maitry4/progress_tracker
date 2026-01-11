@@ -6,6 +6,11 @@
           "title": "Contains Duplicate",
           "file": "contains_duplicate.html",
           "date": "2026-01-10"
+        }, 
+        {
+          "title": "Valid Anagram",
+          "file": "valid_anagram.html",
+          "date": "2026-01-11"
         }
       ],
       "learn": [
